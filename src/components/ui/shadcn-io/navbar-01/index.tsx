@@ -296,6 +296,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { cn } from "@/lib/utils";
+import About from "@/components/ReactRowter/About";
 
 // -------------------- Logo --------------------
 const Logo = (props: React.SVGAttributes<SVGElement>) => (
@@ -379,7 +380,9 @@ export interface Navbar01Props extends React.HTMLAttributes<HTMLElement> {
 
 // -------------------- Default Links --------------------
 const defaultNavigationLinks: Navbar01NavLink[] = [
-  { href: "/about", label: "ABOUT", active: true },
+  { href: "/", label: "Home", active: true },
+  { href: "/about", label: "About" },
+   
   { href: "/experience", label: "EXPERIENCE" },
   { href: "/skill", label: "SKILLS" },
   { href: "/education", label: "EDUCATION" },
@@ -549,6 +552,7 @@ export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
           </div>
         </header>
                 <Outlet />
+                <About/>
       </div>
     );
   }
