@@ -393,7 +393,7 @@ export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
     {
       className,
       logo = <p></p>,
-      logoHref = "/",
+      logoHref = "/about",
       navigationLinks = defaultNavigationLinks,
       signInText = "",
       ctaText = "GitHub Profile",
@@ -548,7 +548,7 @@ export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
             </div>
           </div>
         </header>
-        <Outlet />
+                <Outlet />
       </div>
     );
   }
