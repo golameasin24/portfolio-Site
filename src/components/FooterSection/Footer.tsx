@@ -14,20 +14,28 @@ export default function Footer() {
                     <div>
                         <ul>
                             <li className='flex gap-2 text-white justify-center sm:gap-7 lg:text-2xl mb-12'>
-                                <a href="#">About</a>
-                                <a href="#">Skills</a>
-                                <a href="#">Experience</a>
-                                <a href="#">Projects</a>
-                                <a href="#">Education</a>
+                                <a href="#education">About</a>
+                                <a href="#skill">Skills</a>
+                                <a href="#experience">Experience</a>
+                                <a href="#project">Projects</a>
+                                <a href="#education">Education</a>
                             </li>
                         </ul>
                     </div>
                     <div>
                         <div className='flex gap-4 sm:gap-8 justify-center mb-10'>
-                            <IoLogoGithub  className='bg-white p-2 text-[40px]  rounded-[50%]'/>
-                            <FaLinkedin className='bg-white p-2 text-[40px]  rounded-[50%]' />
-                            <FaFacebookF  className='bg-white p-2 text-[40px]  rounded-[50%]'/>
-                            <FaXTwitter className='bg-[#8B98A5] p-2 text-[40px]  rounded-[50%]' />
+                            <a href="https://github.com/golameasin24">
+                             <IoLogoGithub  className='bg-white p-2 text-[40px]  rounded-[50%]'/>
+                            </a>
+                            <a href="https://www.linkedin.com/feed/">
+                                <FaLinkedin className='bg-white p-2 text-[40px]  rounded-[50%]' />
+                            </a>
+                            <a href="https://www.facebook.com/">
+                               <FaFacebookF  className='bg-white p-2 text-[40px]  rounded-[50%]'/>
+                            </a>
+                            <a href="#">
+                               <FaXTwitter className='bg-[#8B98A5] p-2 text-[40px]  rounded-[50%]' />
+                            </a>
                         </div>
                     </div>
                     <p className='text-white'>© 2025 Golam Easin. All rights reserved.</p>

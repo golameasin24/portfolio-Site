@@ -4,7 +4,7 @@ export default function ExpreenceWriting() {
   return (
     <div className='sm:w-[400px] sm:mx-auto md:w-[500px]'>
          {/* section one */}
-        <div className='p-5'>
+        <div className='p-5 animate__animated animate__backInLeft'>
             <div className='border border-blue-200 shadow-sm shadow-blue-300 p-7  rounded-sm'>
                 <div className='text-center text-[#09fcd3] relative -top-5'>
                     <h4>(Jun 2023 - Present)</h4>

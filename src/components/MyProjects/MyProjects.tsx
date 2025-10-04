@@ -64,7 +64,7 @@ export default function MyProjects() {
   ]
 
   return (
-    <div className="bg-[#1A173C]">
+    <div className="bg-[#1A173C]" id="project">
       <AnimatedBackground/>
          <div className="text-4xl text-center mt-50">
              <button className="bg-[] px-3 py-2 text-white border bg-[#0A0A70] border-sky-900 rounded-sm">My Projects</button>

@@ -16,9 +16,11 @@ import { FaLaravel } from "react-icons/fa6";
 import { TbBrandMongodb } from "react-icons/tb";
 import { FaFire } from "react-icons/fa";
 import AnimatedBackground from '@/components/BirdAnimation/Bird';
+
+
 export default function Skill() {
   return (
-    <div className='bg-[#1A173C]'>
+    <div className='bg-[#1A173C]' id="skill">
          <div>
             <AnimatedBackground/>
               <div className='mt-50'>

@@ -4,7 +4,7 @@ import SecondBlog from '@/components/BlogsSite/SecondBlog'
 
 export default function SubBlog() {
   return (
-    <div className='bg-[#1A173C]'>
+    <div className='bg-[#1A173C]' id='blog'>
         <div>
             <FirstBlog/>
         </div>

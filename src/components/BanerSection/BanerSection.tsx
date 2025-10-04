@@ -59,7 +59,7 @@ function BanerSection() {
   }, []);
 
   return (
-    <div className=' p-2 lg:flex justify-between items-center lg:p-8  xl:w-[90%] 2xl:w-[80%] mx-auto'>
+    <div   id='bannerSection'  className=' p-2 lg:flex justify-between items-center lg:p-8  xl:w-[90%] 2xl:w-[80%] mx-auto'>
       <div className='my-5 sm:flex justify-center order-2 lg:w-[50%]'>
         <img className='rounded-[50%] sm:w-[500px] sm:h-[500px] xl:w-[450px] bg-transparent' src="/image/yeasin.jpg" alt="" /> 
         <AnimatedBackground/>  
@@ -83,10 +83,10 @@ function BanerSection() {
         </p>
 
         <div className='flex gap-4 mt-10 justify-center'>
-          <a href=""><FaFacebookSquare className="text-blue-500 text-4xl" /></a>
-          <a href=""><FaWhatsappSquare className="text-green-500 text-4xl" /></a>
-          <a href=""><FaLinkedin className="text-blue-500 text-4xl" /></a>
-          <a href=""><FaXTwitter className="text-4xl bg-gray-300 rounded-[2px]" /></a>
+          <a href="https://www.facebook.com/"><FaFacebookSquare className="text-blue-500 text-4xl" /></a>
+          <a href="01947540267"><FaWhatsappSquare className="text-green-500 text-4xl" /></a>
+          <a href="https://www.linkedin.com/feed/"><FaLinkedin className="text-blue-500 text-4xl" /></a>
+          <a href="#"><FaXTwitter className="text-4xl bg-gray-300 rounded-[2px]" /></a>
         </div>
       </div>
     </div>

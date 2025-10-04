@@ -6,8 +6,7 @@ import SupllyExprence from '@/components/ExprenceSection/SupllyExprence'
 
 export default function Experience() {
   return (
-    <div className='bg-[#1A173C]'>
-         {/* <BanerSection/> */}
+    <div className='bg-[#1A173C]' id='experience'>
          <SupllyExprence/>
          <AnimatedBackground/>
     </div>
