@@ -58,13 +58,13 @@ export default function BanerSection() {
           <motion.a
             href="/resume.pdf"
             target="_blank"
-            className="relative inline-block px-8 py-3 text-lg font-semibold text-white rounded-full 
+            className="mt-10 relative inline-block px-8 py-3 text-lg font-semibold text-white rounded-full 
                        bg-gradient-to-r from-[#00FFA3] via-[#03E1FF] to-[#DC1FFF] 
                        transition-all duration-300 ease-in-out
                        hover:shadow-[0_0_25px_#03E1FF]"
-                animate={{ y: [0, 100, 0] }} 
+                animate={{ y: [0, -5, 0] }} 
                 transition={{
-                  duration: 0.9,      
+                  duration: 0.5,      
                   repeat: Infinity,   
                   ease: "easeInOut"
                 }}>
