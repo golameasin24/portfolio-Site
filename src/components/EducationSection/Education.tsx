@@ -1,51 +1,62 @@
-import AnimatedBackground from '@/components/BirdAnimation/Bird';
-// import React from 'react'
+import AnimatedBackground from '@/components/BackgroundAnimation/BackgroundAnimation';
 import { FaChalkboardUser } from "react-icons/fa6";
+import { motion } from "framer-motion";
 
 export default function Education() {
   return (
-    <div className='bg-[#1A173C]'> 
-     <AnimatedBackground/>
-        {/* section one */}
-        <div id='education' className='text-3xl text-white text-center mt-50 mb-10'>
-             <button className='bg-[#0A0A70] border border-blue-100 p-3 rounded-sm'>EDUCATIONS</button>
+    <div className='relative bg-[#1A173C] py-20 overflow-hidden'>
+      <AnimatedBackground />
+
+      {/* Title */}
+      <div id='education' className='text-3xl text-white text-center mb-16'>
+        <button className='bg-gradient-to-r from-[#0A0A70] to-[#1E40AF] border border-blue-200 px-6 py-3 rounded-md shadow-md shadow-blue-700 hover:scale-105 transition-all duration-300'>
+          EDUCATION
+        </button>
+      </div>
+
+      {/* Section 1 */}
+      <motion.div
+        initial={{ opacity: 0, x: -100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1, ease: "easeOut" }}
+        viewport={{ once: false, amount: 0.3 }}
+        className='relative w-full mb-16'
+      >
+        <div className='lg:w-[700px] xl:w-[800px] 2xl:w-[900px] mx-auto'>
+          <div className='bg-[#23205a] border border-cyan-300/40 rounded-2xl p-8 text-white shadow-lg shadow-blue-800/30'>
+            <div className='flex items-center gap-4 mb-4'>
+              <FaChalkboardUser className='text-4xl text-cyan-400' />
+              <h4 className='text-xl font-semibold text-cyan-300'>(Jun 2025 - Present)</h4>
+            </div>
+            <p className='text-2xl font-semibold mb-2'>MASTER'S IN ISLAMIC STUDIES</p>
+            <p className='text-gray-200'>
+              JAMIA ARABIA ISLAMIC EDUCATION, KUSHTIA DOWLOTPUR, BANGLADESH
+            </p>
+          </div>
         </div>
-          <div className='p-5 animate__animated animate__fadeInLeft'>
-                      <div className='border border-blue-200 shadow-sm shadow-blue-300 px-3 py-12 rounded-sm lg:w-[800px] lg:mx-auto xl:w-[900px] 2xl:w-[1000px]'>
-                          <div className='text-center text-[#09fcd3] relative -top-9'>
-                              <h4>(Jun 2025 - Present)</h4>
-                          </div>
-                          <div className='flex justify-between items-center gap-5'>
-                              <div className='md:pl-10'>
-                                      <FaChalkboardUser className='text-4xl text-blue-400' />
-                              </div>
-                              <div className='text-white animate__animated animate__heartBeat'>
-                                <p className='text-2xl mb-3'>MASTER'S IN ISLAMIC STUDIES </p>
-                                <p>JAMIA ARABIA ISLAMIC EDUCATION  KUSHTIA DOWLOTPUR BANGLADESH</p>
-                              </div>
-                          </div>
-                      </div>
-                 </div>
+      </motion.div>
 
-        {/* section two */}
-
-              <div className='p-5 animate__animated animate__fadeInRight'>
-                      <div className='border border-blue-200 shadow-sm shadow-blue-300 px-3 py-12 rounded-sm lg:w-[800px] lg:mx-auto xl:w-[900px] 2xl:w-[1000px]'>
-                          <div className='text-center text-[#09fcd3] relative -top-9'>
-                              <h4>(Jun 2025 - Present)</h4>
-                          </div>
-                          <div className='flex justify-between items-center gap-5'>
-                              <div className='pl-10'>
-                                      <FaChalkboardUser className='text-4xl text-blue-400' />
-                              </div>
-                              <div className='text-white'>
-                                <p className='text-2xl mb-3'>Diploma in English &  COUMPUTER TECHNOLOGY </p>
-                                <p>Ahmad Education</p>
-                              </div>
-                          </div>
-                      </div>
-                 </div>
-
+      {/* Section 2 */}
+      <motion.div
+        initial={{ opacity: 0, x: 100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+        viewport={{ once: false, amount: 0.3 }}
+        className='relative w-full mb-16'
+      >
+        <div className='lg:w-[700px] xl:w-[800px] 2xl:w-[900px] mx-auto'>
+          <div className='bg-[#23205a] border border-cyan-300/40 rounded-2xl p-8 text-white shadow-lg shadow-blue-800/30'>
+            <div className='flex items-center gap-4 mb-4'>
+              <FaChalkboardUser className='text-4xl text-cyan-400' />
+              <h4 className='text-xl font-semibold text-cyan-300'>(Jun 2025 - Present)</h4>
+            </div>
+            <p className='text-2xl font-semibold mb-2'>
+              Diploma in English & COMPUTER TECHNOLOGY
+            </p>
+            <p className='text-gray-200'>Ahmad Education</p>
+          </div>
+        </div>
+      </motion.div>
     </div>
-  )
+  );
 }

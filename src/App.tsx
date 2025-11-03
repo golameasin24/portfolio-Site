@@ -3,7 +3,7 @@
 
 
 import BanerSection from '@/components/BanerSection/BanerSection'
-import SubBlog from '@/components/BlogsSite/SubBlog'
+import SubBlog from '@/components/ContactSection/MainContactSection'
 import Education from '@/components/EducationSection/Education'
 import Footer from '@/components/FooterSection/Footer'
 import MyProjects from '@/components/MyProjects/MyProjects'

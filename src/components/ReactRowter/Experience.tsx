@@ -1,6 +1,6 @@
 
 
-import AnimatedBackground from '@/components/BirdAnimation/Bird'
+import AnimatedBackground from '@/components/BackgroundAnimation/BackgroundAnimation'
 import SupllyExprence from '@/components/ExprenceSection/SupllyExprence'
 // import React from 'react'
 

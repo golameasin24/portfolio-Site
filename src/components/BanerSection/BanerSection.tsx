@@ -1,96 +1,99 @@
-// import React from 'react'
-// import { FaFacebookSquare } from "react-icons/fa";
-// import { FaWhatsappSquare } from "react-icons/fa";
-// import { FaLinkedin } from "react-icons/fa";
-// function BanerSection() {
-//   return (
-//     <div className='flex justify-between mt-10 items-center p-18'>
-//           <div className='w-[50%]'>
-//               <p className='text-4xl text-white'>Hello,</p>
-//               <p className='text-4xl text-white'>This is Golam Easin</p>
-//               <p className='text-4xl text-white'>I'm a Professional</p>
-//               <p className='text-4xl text-white'>Frot end devoloper</p>
-//               <p className='text-[#818181] text-2xl'>
-//                 I am a motivated and versatile individual, always eager to take on new challenges. With a passion for learning I am dedicated to delivering high-quality results. With a positive attitude and a growth mindset, I am ready to make a meaningful contribution and achieve great things.Check Resume
-//               </p>
-//               <div className='flex gap-4'>
-//                <a href=""> <FaFacebookSquare className="text-blue-500" /></a> 
-//                 <a href=""><FaWhatsappSquare className="text-green-500" /></a>   
-//                 <a href=""><FaLinkedin className="text-blue-500" /></a>  
-//               </div>
-//           </div>
-//           <div className='w-[30%] h-[30%]'>
-//               <img className='rounded-2xl' src="/image/pakistan.png" alt="" /> 
-//           </div>
-//     </div>
-//   )
-// }
+"use client";
 
-// export default BanerSection
-
-
-
-
-import AnimatedBackground from '@/components/BirdAnimation/Bird';
-import { useEffect, useRef } from 'react'
-import { FaFacebookSquare } from "react-icons/fa";
-import { FaWhatsappSquare } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
+import AnimatedBackground from "@/components/BackgroundAnimation/BackgroundAnimation";
+import { useEffect, useRef } from "react";
 import Typed from "typed.js";
+import { motion } from "framer-motion";
 
-function BanerSection() {
+export default function BanerSection() {
   const typedElement = useRef<HTMLSpanElement>(null);
 
+  // Typed.js effect
   useEffect(() => {
     if (typedElement.current) {
       const typed = new Typed(typedElement.current, {
-        strings: ["Front End Developer", "JavaScript Learner", "React Creator"],
-        typeSpeed: 100,
+        strings: ["Front-End Developer", "JavaScript Learner", "React Enthusiast"],
+        typeSpeed: 80,
         backSpeed: 50,
         backDelay: 1000,
         loop: true,
       });
 
-      return () => {
-        typed.destroy();
-      };
+      return () => typed.destroy();
     }
   }, []);
 
   return (
-    <div   id='bannerSection'  className=' p-2 lg:flex justify-between items-center lg:p-8  xl:w-[90%] 2xl:w-[80%] mx-auto'>
-      <div className='my-5 sm:flex justify-center order-2 lg:w-[50%]'>
-        <img className='rounded-[50%] sm:w-[500px] sm:h-[500px] xl:w-[450px] bg-transparent' src="/image/yeasin.jpg" alt="" /> 
-        <AnimatedBackground/>  
-      </div>
+    <div id="bannerSection" className="relative bg-[#1A173C] overflow-hidden py-20 lg:py-24">
+      {/* Background Animation */}
+      <AnimatedBackground />
 
-      <div className='order-1 lg:w-[40%] bg-[#1A173C]'>
-        <p className='text-4xl text-white text-center'>Hello,</p>
-        <p className='text-4xl text-white text-center'>I am Golam Easin</p>
-        <p className='text-4xl text-white text-center'> Professional</p>
+      <div className="lg:flex justify-between items-center xl:w-[85%] 2xl:w-[75%] mx-auto px-4 lg:px-10">
+        {/* Left: Text Section */}
+        <motion.div
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: false, amount: 0.3 }}
+          className="lg:w-[45%] text-center lg:text-left z-10"
+        >
+          <h2 className="text-4xl sm:text-5xl text-white font-semibold mb-3">Hello,</h2>
+          <h2 className="text-4xl sm:text-5xl text-white font-semibold mb-3">
+            I am <span className="text-[#16F2B3]">Golam Easin</span>
+          </h2>
+          <h3 className="text-3xl sm:text-4xl text-white mb-2">Professional</h3>
 
-        {/* Typed.js Effect */}
-        <p className='text-3xl text-white text-center'>
-          <span className='text-[#16F2B3]' ref={typedElement}></span>
-        </p>
+          {/* Typed.js Effect */}
+          <h3 className="text-3xl sm:text-4xl font-semibold text-[#16F2B3] mb-6">
+            <span ref={typedElement}></span>
+          </h3>
 
-        <p className='text-1xl mt-4  text-card text-center text-white'>
-          I am a motivated and versatile individual, always eager to take on new challenges. 
-          With a passion for learning I am dedicated to delivering high-quality results. 
-          With a positive attitude and a growth mindset, I am ready to make a meaningful contribution 
-          and achieve great things. Check Resume
-        </p>
+          <p className="text-gray-300 text-base sm:text-lg leading-relaxed ">
+            I am a motivated and versatile individual, always eager to take on new challenges. With a passion
+            for learning, I am dedicated to delivering high-quality results. With a positive attitude and a
+            growth mindset, I’m ready to make a meaningful contribution and achieve great things.
+          </p>
 
-        <div className='flex gap-4 mt-10 justify-center'>
-          <a href="https://www.facebook.com/"><FaFacebookSquare className="text-blue-500 text-4xl" /></a>
-          <a href="01947540267"><FaWhatsappSquare className="text-green-500 text-4xl" /></a>
-          <a href="https://www.linkedin.com/feed/"><FaLinkedin className="text-blue-500 text-4xl" /></a>
-          <a href="#"><FaXTwitter className="text-4xl bg-gray-300 rounded-[2px]" /></a>
-        </div>
+          {/* Check Resume Button with floating animation */}
+          <motion.a
+            href="/resume.pdf"
+            target="_blank"
+            className="relative inline-block px-8 py-3 text-lg font-semibold text-white rounded-full 
+                       bg-gradient-to-r from-[#00FFA3] via-[#03E1FF] to-[#DC1FFF] 
+                       transition-all duration-300 ease-in-out
+                       hover:shadow-[0_0_25px_#03E1FF]"
+                animate={{ y: [0, 100, 0] }} 
+                transition={{
+                  duration: 0.9,      
+                  repeat: Infinity,   
+                  ease: "easeInOut"
+                }}>
+            Check Resume
+            <span className="absolute inset-0 rounded-full bg-[#16F2B3]/10 blur-md -z-10"></span>
+          </motion.a>
+
+          {/* Social Icons */}
+        
+        
+        </motion.div>
+
+        {/* Right: Profile Image */}
+        <motion.div
+          initial={{ opacity: 0, x: 100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: false, amount: 0.3 }}
+          className="mt-20 lg:mt-0 flex justify-center lg:w-[45%]" >
+          <div className="relative">
+            <img
+              src="/image/yeasin.jpg"
+              alt="Golam Easin"
+              className="rounded-full w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] lg:w-[420px] lg:h-[420px] object-cover border-4 border-[#16F2B3]/60 shadow-[0_0_25px_#16F2B3]"
+            />
+            <div className="absolute inset-0 rounded-full bg-[#16F2B3]/10 blur-3xl -z-10"></div>
+          </div>
+        </motion.div>
       </div>
     </div>
-  )
+  );
 }
-
-export default BanerSection
