@@ -14,7 +14,7 @@ export default function MyProjects() {
       <AnimatedBackground />
 
       {/* Title */}
-      <div className="text-center mt-10 mb-16">
+      <div className="text-center">
         <motion.button
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -37,7 +37,7 @@ export default function MyProjects() {
             link="https://book-website-13ee.vercel.app/"
             img="/image/bdBooks.png"
             title="BD Book is an online platform for exploring and discovering books in Bangladesh. It connects readers with a wide range of genres, authors, and educational resources."
-            tech={["HTML", "Tailwind CSS", "React", "Express", "MongoDB"]}
+            tech={["HTML", "Tailwind CSS", "React",]}
           />
 
           {/* Project 2 */}
@@ -45,7 +45,7 @@ export default function MyProjects() {
             link="https://madrasha-website.vercel.app/"
             img="/image/mad.png"
             title="Madrasa is a digital learning platform dedicated to Islamic education. It provides access to Quran and Islamic studies for students and teachers."
-            tech={["Tailwind CSS", "Express", "MongoDB"]}
+            tech={["Html", "CSS",]}
           />
 
           {/* Project 3 */}
@@ -53,7 +53,7 @@ export default function MyProjects() {
             link="https://book-website-13ee.vercel.app/"
             img="/image/bdBooks.png"
             title="BD Book project with React, Tailwind and MongoDB, focused on user-friendly book discovery experience."
-            tech={["React", "Tailwind CSS", "MongoDB"]}
+            tech={["Html", "Tailwind CSS", "React"]}
           />
 
           {/* Project 4 */}
@@ -61,7 +61,7 @@ export default function MyProjects() {
             link="https://madrasha-website.vercel.app/"
             img="/image/mad.png"
             title="Madrasa Learning platform for Islamic courses with full-stack technologies."
-            tech={["HTML", "Tailwind CSS", "Express"]}
+            tech={["HTML", "Tailwind CSS",]}
           />
         </motion.ul>
       </div>
