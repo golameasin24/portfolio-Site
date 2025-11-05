@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function Education() {
   return (
-    <div className='relative bg-[#1A173C] py-20 overflow-hidden ml-1'>
+    <div className='relative bg-[#1A173C] py-20 overflow-hidden ml-2'>
       <AnimatedBackground />
 
       {/* Title */}

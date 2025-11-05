@@ -4,6 +4,7 @@ import AnimatedBackground from "@/components/BackgroundAnimation/BackgroundAnima
 import { useEffect, useRef } from "react";
 import Typed from "typed.js";
 import { motion } from "framer-motion";
+import CodeEditor from "../CodeEditor/CondeEditor";
 
 export default function BanerSection() {
   const typedElement = useRef<HTMLSpanElement>(null);
@@ -85,11 +86,13 @@ export default function BanerSection() {
           viewport={{ once: false, amount: 0.3 }}
           className="mt-20 lg:mt-0 flex justify-center lg:w-[45%]" >
           <div className="relative">
-            <img
+            {/* <img
               src="/image/yeasin.jpg"
               alt="Golam Easin"
               className="rounded-full w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] lg:w-[420px] lg:h-[420px] object-cover border-4 border-[#16F2B3]/60 shadow-[0_0_25px_#16F2B3]"
-            />
+            /> */}
+
+            <CodeEditor/>
             <div className="absolute inset-0 rounded-full bg-[#16F2B3]/10 blur-3xl -z-10"></div>
           </div>
         </motion.div>

@@ -151,80 +151,45 @@ export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
     );
 
     return (
-      <div className="xl:w-[1200px] mx-auto mt-5">
-        <header
-          ref={combinedRef}
-          className={cn(
-            "sticky top-0 z-50 w-full bg-[#1A173C]/95 backdrop-blur-sm px-4 md:px-6",
-            className
-          )}
-          {...props}
-        >
-          <div className="container mx-auto flex h-16 max-w-screen-2xl items-center justify-between gap-4">
-            {/* Left side */}
-            <div className="flex items-center gap-2">
-              {/* Mobile menu trigger */}
-              {isMobile && (
-                <Popover>
-                  <PopoverTrigger asChild>
-                    <Button
-                      className="group h-9 w-9 text-white bg-black"
-                      variant="ghost"
-                      size="icon"
-                    >
-                      <HamburgerIcon />
-                    </Button>
-                  </PopoverTrigger>
-                  <PopoverContent
-                    align="start"
-                    className="w-48 p-2 bg-[#1B183D] text-white"
+      <header
+        ref={combinedRef}
+        className={cn(
+          "sticky top-0 z-50 w-full bg-[#1A173C]/95 backdrop-blur-sm px-4 md:px-6 shadow-lg",
+          className
+        )}
+        {...props}
+      >
+        <div className="xl:w-[1200px] mx-auto flex h-16 max-w-screen-2xl items-center justify-between gap-4">
+          {/* Left side */}
+          <div className="flex items-center gap-2">
+            {/* Mobile menu trigger */}
+            {isMobile && (
+              <Popover>
+                <PopoverTrigger asChild>
+                  <Button
+                    className="group h-9 w-9 text-white bg-black"
+                    variant="ghost"
+                    size="icon"
                   >
-                    <NavigationMenu className="max-w-none">
-                      <NavigationMenuList className="flex-col items-start gap-1">
-                        {navigationLinks.map((link, index) => (
-                          <NavigationMenuItem key={index} className="w-full">
-                            <NavigationMenuLink asChild>
-                              <a
-                                href={link.href}
-                                className={cn(
-                                  "flex w-full items-center rounded-md px-3 py-2 text-sm font-medium cursor-pointer no-underline",
-                                  link.active
-                                    ? "text-white bg-[#1B183D]"
-                                    : "text-white hover:bg-sky-400"
-                                )}
-                              >
-                                {link.label}
-                              </a>
-                            </NavigationMenuLink>
-                          </NavigationMenuItem>
-                        ))}
-                      </NavigationMenuList>
-                    </NavigationMenu>
-                  </PopoverContent>
-                </Popover>
-              )}
-              {/* Logo + Desktop menu */}
-              <div className="flex items-center gap-6">
-                <a
-                  href={logoHref}
-                  className="flex items-center space-x-5 text-[#C35EB9] cursor-pointer"
+                    <HamburgerIcon />
+                  </Button>
+                </PopoverTrigger>
+                <PopoverContent
+                  align="start"
+                  className="w-48 p-2 bg-[#1B183D] text-white"
                 >
-                  <div className="text-2xl">{logo}</div>
-                  <span className="hidden font-bold text-3xl sm:inline-block pr-12">
-                    Golam Easin
-                  </span>
-                </a>
-                {!isMobile && (
-                  <NavigationMenu className="flex">
-                    <NavigationMenuList className="gap-1">
+                  <NavigationMenu className="max-w-none">
+                    <NavigationMenuList className="flex-col items-start gap-1">
                       {navigationLinks.map((link, index) => (
-                        <NavigationMenuItem key={index}>
+                        <NavigationMenuItem key={index} className="w-full">
                           <NavigationMenuLink asChild>
                             <a
                               href={link.href}
                               className={cn(
-                                "group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-white cursor-pointer no-underline hover:text-white hover:bg-transparent",
-                                link.active ? "text-white" : "text-white"
+                                "flex w-full items-center rounded-md px-3 py-2 text-sm font-medium cursor-pointer no-underline",
+                                link.active
+                                  ? "text-white bg-[#1B183D]"
+                                  : "text-white hover:bg-sky-400"
                               )}
                             >
                               {link.label}
@@ -234,43 +199,77 @@ export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
                       ))}
                     </NavigationMenuList>
                   </NavigationMenu>
-                )}
-              </div>
-            </div>
-            {/* Right side */}
-            <div className="flex items-center gap-3">
-              {signInText && (
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className="text-sm font-medium px-4 h-9 rounded-md shadow-sm hover:bg-transparent hover:text-white"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    if (onSignInClick) onSignInClick();
-                  }}
-                >
-                  {signInText}
-                </Button>
-              )}
-
+                </PopoverContent>
+              </Popover>
+            )}
+            {/* Logo + Desktop menu */}
+            <div className="flex items-center gap-6">
               <a
-                href={ctaHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="border rounded-2xl text-white border-[#8E00FF] text-md font-medium px-4 h-9 shadow-sm bg-[#1A173C] hover:bg-[#1A1B3E] flex items-center justify-center"
-                onClick={(e) => {
-                  if (onCtaClick) {
-                    e.preventDefault();
-                    onCtaClick();
-                  }
-                }}
+                href={logoHref}
+                className="flex items-center space-x-5 text-[#C35EB9] cursor-pointer"
               >
-                {ctaText}
+                <div className="text-2xl">{logo}</div>
+                <span className="hidden font-bold text-3xl sm:inline-block pr-12">
+                  Golam Easin
+                </span>
               </a>
+              {!isMobile && (
+                <NavigationMenu className="flex">
+                  <NavigationMenuList className="gap-1">
+                    {navigationLinks.map((link, index) => (
+                      <NavigationMenuItem key={index}>
+                        <NavigationMenuLink asChild>
+                          <a
+                            href={link.href}
+                            className={cn(
+                              "group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-white cursor-pointer no-underline hover:text-white hover:bg-transparent",
+                              link.active ? "text-white" : "text-white"
+                            )}
+                          >
+                            {link.label}
+                          </a>
+                        </NavigationMenuLink>
+                      </NavigationMenuItem>
+                    ))}
+                  </NavigationMenuList>
+                </NavigationMenu>
+              )}
             </div>
           </div>
-        </header>
-      </div>
+
+          {/* Right side */}
+          <div className="flex items-center gap-3">
+            {signInText && (
+              <Button
+                variant="ghost"
+                size="sm"
+                className="text-sm font-medium px-4 h-9 rounded-md shadow-sm hover:bg-transparent hover:text-white"
+                onClick={(e) => {
+                  e.preventDefault();
+                  if (onSignInClick) onSignInClick();
+                }}
+              >
+                {signInText}
+              </Button>
+            )}
+
+            <a
+              href={ctaHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border rounded-2xl text-white border-[#8E00FF] text-md font-medium px-4 h-9 shadow-sm bg-[#1A173C] hover:bg-[#1A1B3E] flex items-center justify-center"
+              onClick={(e) => {
+                if (onCtaClick) {
+                  e.preventDefault();
+                  onCtaClick();
+                }
+              }}
+            >
+              {ctaText}
+            </a>
+          </div>
+        </div>
+      </header>
     );
   }
 );

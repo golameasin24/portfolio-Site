@@ -5,13 +5,31 @@ import { Textarea } from '@/components/ui/textarea';
 import { RiMessage2Line } from "react-icons/ri";
 import ThirdBlog from '@/components/ContactSection/ContactSection';
 import { motion } from "framer-motion";
+import { useState } from 'react';
+import toast, { Toaster } from 'react-hot-toast';
 
 export default function FromSection() {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    toast.success('Sending message successfully!');
+
+    // Form reset
+    setName('');
+    setEmail('');
+    setMessage('');
+  }
+
   return (
-    <div className='mb-50 mt-50 bg-[#1A173C] py-16'>
+    <div className='mb-5 mt-10 bg-[#1A173C] py-16'>
+      <Toaster position="top-right" />
       <div className='xl:w-[1000px] 2xl:w-[1090px] mx-auto px-4 lg:px-0'>
         <div className='lg:flex justify-between items-start gap-10'>
-
+          
           {/* Left: Vertical Contact Button */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -42,20 +60,42 @@ export default function FromSection() {
                 </p>
               </div>
 
-              <form className='space-y-5'>
+              <form className='space-y-5' onSubmit={handleSubmit}>
                 <div>
                   <label className='block mb-2 font-medium' htmlFor="name">Your Name:</label>
-                  <Input type='text' id='name' placeholder="Enter your name" className='bg-[#2A234B] text-white border border-blue-400 focus:border-[#16F2B3]' />
+                  <Input
+                    type='text'
+                    id='name'
+                    placeholder="Enter your name"
+                    className='bg-[#2A234B] text-white border border-blue-400 focus:border-[#16F2B3]'
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    required
+                  />
                 </div>
 
                 <div>
                   <label className='block mb-2 font-medium' htmlFor="email">Your Email:</label>
-                  <Input type='email' id='email' placeholder="Enter your email" className='bg-[#2A234B] text-white border border-blue-400 focus:border-[#16F2B3]' />
+                  <Input
+                    type='email'
+                    id='email'
+                    placeholder="Enter your email"
+                    className='bg-[#2A234B] text-white border border-blue-400 focus:border-[#16F2B3]'
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                  />
                 </div>
 
                 <div>
                   <label className='block mb-2 font-medium' htmlFor="message">Your Message:</label>
-                  <Textarea placeholder="Write your message..." className='bg-[#2A234B] text-white border border-blue-400 focus:border-[#16F2B3] p-4' />
+                  <Textarea
+                    placeholder="Write your message..."
+                    className='bg-[#2A234B] text-white border border-blue-400 focus:border-[#16F2B3] p-4'
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    required
+                  />
                 </div>
 
                 <div className='text-center relative mt-4'>
