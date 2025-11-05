@@ -19,10 +19,10 @@ export default function AboutSection() {
         >
           <div className="relative">
             <img
-              src="/image/yeasin.jpg"
+              src="/image/E.png"
               alt="Golam Easin"
               className="rounded-full w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] lg:w-[420px] lg:h-[420px] 
-                         object-cover border-4 border-[#16F2B3]/60 shadow-[0_0_25px_#16F2B3]"
+                         object-cover border-4 border-[#1A173B]/60 shadow-[#1A173B]"
             />
             <div className="absolute inset-0 rounded-full bg-[#16F2B3]/10 blur-3xl -z-10"></div>
           </div>
