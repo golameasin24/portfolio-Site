@@ -19,7 +19,7 @@ export default function AboutSection() {
         >
           <div className="relative">
             <img
-              src="/image/E.png"
+              src="/image/y.png"
               alt="Golam Easin"
               className="rounded-full w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] lg:w-[420px] lg:h-[420px] 
                          object-cover border-4 border-[#1A173B]/60 shadow-[#1A173B]"

@@ -16,7 +16,7 @@ export default function FromSection() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    toast.success('Sending message successfully!');
+    toast.success('Sent message successfully!');
 
     // Form reset
     setName('');
